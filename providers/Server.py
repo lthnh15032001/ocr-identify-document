@@ -13,12 +13,3 @@ class Server:
     @staticmethod
     def initialization():
         serve(Server._flask, port=8080)
-
-    @staticmethod
-    def instance() -> Flask:
-        return Server._flask
-
-
-@Server._flask.route('/')
-def hello():
-    return render_template('index.html')
