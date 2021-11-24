@@ -11,5 +11,5 @@ class Server:
 
     # Initial server flask
     # Run app on 8080
-    def initialaztion(self):
+    def initialization(self):
         serve(self._flask, port=8080)
