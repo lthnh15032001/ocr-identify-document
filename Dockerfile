@@ -13,11 +13,7 @@ COPY . .
 
 RUN apt-get clean
 
-RUN pip install virtualenv
-
-RUN virtualenv env
-
-RUN source env/bin/activate
+RUN pip install --upgrade pip
 
 RUN pip install -r ./requirements.txt
 
