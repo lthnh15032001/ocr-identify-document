@@ -7,6 +7,10 @@ RUN apt-get -y install \
     tesseract-ocr-jpn \
     libgl1-mesa-dev; 
 
+WORKDIR /ocr
+
+COPY . .
+
 RUN apt-get clean
 
 RUN pip install virtualenv
