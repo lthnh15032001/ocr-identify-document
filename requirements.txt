@@ -1,2 +1,4 @@
 flask
 waitress
+pytesseract
+opencv-python
