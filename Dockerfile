@@ -13,12 +13,8 @@ WORKDIR /ocr
 
 COPY . .
 
-RUN python3 -m venv /ocr/env
+RUN sudo pip install --upgrade pip
 
-RUN source -m /ocr/env/bin/activate
-
-RUN pip install --upgrade pip
-
-RUN pip install -r ./requirements.txt
+RUN sudo pip install -r ./requirements.txt
 
 CMD [ "python","server.py" ]
