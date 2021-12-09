@@ -7,11 +7,15 @@ RUN apt-get -y install \
     tesseract-ocr-jpn \
     libgl1-mesa-dev; 
 
+RUN apt-get clean
+
 WORKDIR /ocr
 
 COPY . .
 
-RUN apt-get clean
+RUN python3 -m venv /ocr/env
+
+RUN source -m /ocr/env/bin/activate
 
 RUN pip install --upgrade pip
 
