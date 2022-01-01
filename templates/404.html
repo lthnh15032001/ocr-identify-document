@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>404 - Page Not Found</title>
+	<link rel="shortcut icon" href="{{url_for('static',filename='favicon.png')}}" type="image/x-icon">
+	<link rel="stylesheet" href="">
+	{% include 'components/head.html'%}
+	{% include 'components/styles.html'%}
+</head>
+
+<body>
+	{% include 'components/header.html' %}
+
+	<div class="w-full grid grid-cols-3">
+		<div class="col-span-1 flex justify-center w-full md:py-64 px-8">
+			<img src="{{url_for('static',filename='favicon.png')}}" alt="" class="h-64">
+		</div>
+		<div class="col-span-2">
+			<div class="w-96 h-96 border-8" style="border-radius: 50%; border-top-color: black;">
+
+			</div>
+		</div>
+	</div>
+
+
+
+	{% include 'components/footer.html' %}
+	{% include 'components/scripts.html' %}
+</body>
+
+</html>
