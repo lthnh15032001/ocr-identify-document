@@ -1,5 +1,3 @@
-#!bin/bash
-
 echo $OSTYPE
 
 if [[ $OSTYPE == "Win32" ]];
