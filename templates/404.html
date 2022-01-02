@@ -2,17 +2,19 @@
 <html lang="en">
 
 <head>
+	
 	<meta charset="UTF-8">
 	<meta http-equiv="X-UA-Compatible" content="IE=edge">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<title>404 - Page Not Found</title>
 	<link rel="shortcut icon" href="{{url_for('static',filename='favicon.png')}}" type="image/x-icon">
-	<link rel="stylesheet" href="">
 	{% include 'components/head.html'%}
 	{% include 'components/styles.html'%}
+
 </head>
 
 <body>
+
 	{% include 'components/header.html' %}
 	<div class="w-auto mx-8 lg:mx-0 my-8 flex lg:w-full items-center lg:justify-center flex-col lg:flex-row">
 		<img src="{{url_for('static',filename='undraw_page_not_found.svg')}}" alt="">
