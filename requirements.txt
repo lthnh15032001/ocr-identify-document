@@ -2,3 +2,4 @@ flask
 waitress
 pytesseract
 opencv-python
+python-dotenv
