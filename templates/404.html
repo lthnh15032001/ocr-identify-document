@@ -14,12 +14,12 @@
 
 <body>
 	{% include 'components/header.html' %}
-	<div class="w-auto md:py-16 flex w-full justify-center">
-		<img src="{{url_for('static',filename='undraw_page_not_found.svg')}}" alt="" class="hidden lg:block">
-		<div class="items-start flex-col flex justify-center ">
-			<p class="text-green-500 font-black text-5xl mt-8 mb-0">Page Not Found</p>
+	<div class="w-auto mx-8 lg:mx-0 my-8 flex lg:w-full items-center lg:justify-center flex-col lg:flex-row">
+		<img src="{{url_for('static',filename='undraw_page_not_found.svg')}}" alt="">
+		<div class="items-center lg:items-start flex-col flex justify-center ">
+			<p class="text-green-500 font-black text-3xl lg:text-4xl xl:text-5xl mt-8 mb-0">Page Not Found</p>
 			<a href="/"
-				class="bg-green-500 text-white px-8 py-3 rounded-md text-xl font-black my-8 shadow-xl hover:bg-green-400">Go
+				class="bg-green-500 text-white px-4 lg:px-6 xl:px-8 py-2 lg:py-3 rounded-md font-black my-8 shadow-xl hover:bg-green-400 text-base lg:text-xl xl:text-xl">Go
 				to Home! &rarr;</a>
 		</div>
 	</div>
