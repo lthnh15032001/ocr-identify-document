@@ -9,6 +9,8 @@ python3 -m venv ./env
 
 source env/bin/activate
 
+pip -m pip install --upgrade pip
+
 pip3 install -r ./requirements.txt
 
 python3 server.py
@@ -17,9 +19,11 @@ python3 server.py
 - __Local Windows__
 
 ```ps
-python -m venv ./env
+python -m venv .\env
 
 .\venv\Scripts\activate
+
+pip -m pip install --upgrade pip
 
 pip install -r requirements.txt
 
