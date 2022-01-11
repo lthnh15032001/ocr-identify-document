@@ -13,8 +13,10 @@ WORKDIR /ocr
 
 COPY . .
 
-RUN pip install --upgrade pip
+RUN python3 -m venv ./env
 
-RUN pip install -r ./requirements.txt
+RUN ./env/bin/pip3 install --upgrade pip
 
-CMD [ "python","server.py" ]
+RUN ./env/bin/pip3 install -r ./requirements.txt
+
+CMD [ "./env/bin/python3","server.py" ]
