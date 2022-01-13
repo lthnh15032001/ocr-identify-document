@@ -6,3 +6,12 @@
     display: none;
 }
 
+input#upload__file::-webkit-file-upload-button{
+    color: #39374E;
+}
+
+input#upload__file{
+    color: #39374E;
+    border-color: #39374E;
+}
+
