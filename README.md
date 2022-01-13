@@ -4,7 +4,7 @@
 
 ### __Prerequisites__
 
-- __Local Linux GNU & WSL__
+- __Linux GNU & WSL__
 
 Requirements all package python:
 
