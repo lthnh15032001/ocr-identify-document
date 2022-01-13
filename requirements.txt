@@ -3,3 +3,10 @@ waitress
 pytesseract
 opencv-python
 python-dotenv
+autopep8
+matplotlib
+numpy
+opencv-python
+pytesseract
+tensorflow
+unidecode
