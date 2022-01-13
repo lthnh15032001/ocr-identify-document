@@ -25,13 +25,13 @@ brew install python3 tesseract
 
 Install tesseract on Windows [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html#windows)
 
-Required python [Download python](https://www.python.org/downloads/) or using [Chocolatey](https://chocolatey.org/install)
+Required python [Download python](https://www.python.org/downloads/) or using [Chocolatey](https://chocolatey.org/install) verion recommended 3.9.4 
 
 ```powershell
-choco install python
+choco install python --version=3.9.4
 ```
 
-### __Local Linux GNU & Drawin__
+### __Linux GNU & Drawin__
 
 ```bash
 python3 -m venv env
@@ -41,9 +41,11 @@ source env/bin/activate
 pip3 install --upgrade pip
 
 pip3 install -r ./requirements.txt
+
+pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py3-none-any.whl
 ```
 
-### __Local Windows__
+### __Windows__
 
 ```powershell
 python -m venv ./env
@@ -54,7 +56,9 @@ env/Scripts/activate
 
 python -m pip install --upgrade pip
 
-pip install -r requirements.txt
+pip install -r ./requirements.txt
+
+pip install --upgrade tensorflow
 ```
 
 ### __Script__
@@ -73,6 +77,8 @@ powershell ./scripts/activate.ps1
 
 ### __Docker__
 
+Requirement docker compose
+
 ```bash
 docker-compose up -d --build
 ```
@@ -83,7 +89,7 @@ docker-compose up -d --build
 
 ```bash
 source ./env/bin/activate
-python3 server.py
+python3 ./server.py
 ```
 
 - __Windows__
@@ -91,5 +97,5 @@ python3 server.py
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 ./env/Scripts/activate 
-python server.py
+python ./server.py
 ```
