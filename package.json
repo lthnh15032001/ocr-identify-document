@@ -1,0 +1,15 @@
+{
+  "name": "ocr-identify-document",
+  "version": "1.0.0",
+  "description": "## __Setup environments__",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon --exec python3 server.py"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "nodemon": "^2.0.15"
+  }
+}

@@ -3,3 +3,10 @@
 
 # Env folder
 *env*/
+
+# Lock file 
+*.lock
+*-lock.json
+
+# Node library
+node_modules/
