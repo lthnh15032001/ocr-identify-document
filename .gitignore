@@ -10,3 +10,6 @@
 
 # Node library
 node_modules/
+
+# Cache
+*[Cc]ache*

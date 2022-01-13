@@ -83,6 +83,7 @@ docker-compose up -d --build
 
 ```bash
 source ./env/bin/activate
+python3 server.py
 ```
 
 - __Windows__
