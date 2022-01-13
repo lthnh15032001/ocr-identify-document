@@ -23,10 +23,12 @@ brew install python3 tesseract
 
 - __Windows__
 
-Required python 
+Install tesseract on Windows [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html#windows)
+
+Required python [Download python](https://www.python.org/downloads/) or using [Chocolatey](https://chocolatey.org/install)
 
 ```powershell
-
+choco install python
 ```
 
 ### __Local Linux GNU & Drawin__
@@ -57,10 +59,16 @@ pip install -r requirements.txt
 
 ### __Script__
 
-Requied system Linux GNU & Drawin 
+- __Linux GNU & Drawin__ 
 
 ```bash
 ./scripts/activate.sh
+```
+
+- __Windows__
+
+```powershell
+powershell ./scripts/activate.ps1
 ```
 
 ### __Docker__
@@ -71,6 +79,16 @@ docker-compose up -d --build
 
 ### __Run project__
 
-```bash
+- __Linux GNU & Drawin__ 
 
+```bash
+source ./env/bin/activate
+```
+
+- __Windows__
+
+```powershell
+Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
+./env/Scripts/activate 
+python server.py
 ```
