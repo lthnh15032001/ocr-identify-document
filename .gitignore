@@ -13,3 +13,24 @@ node_modules/
 
 # Cache
 *[Cc]ache*
+__pycache__/
+
+
+*.py[cod]
+*$py.class
+
+# File image
+*.png
+*.jpg
+*.txt
+
+# Test folder
+test
+
+# Requirements lib
+!requirements.txt
+!label.txt
+
+# IDE 
+.vscode/
+.idea/

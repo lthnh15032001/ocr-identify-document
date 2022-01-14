@@ -1,5 +1,7 @@
 flask
 waitress
-pytesseract
 opencv-python
 python-dotenv
+vietocr
+torch
+autopep8

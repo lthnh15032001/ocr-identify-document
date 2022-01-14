@@ -4,13 +4,15 @@
 
 ### __Prerequisites__
 
+Required python version <= __`3.9.4`__, recommended 3.9.4
+
 - __Linux GNU & WSL__
 
 Requirements all package python:
 
 ```shell
-sudo apt-get install python python3-pip \
-    python3-venv tesseract
+sudo apt-get install python=3.9.4 python3-pip \
+    python3-venv
 ```
 
 - __Drawin__
@@ -18,17 +20,21 @@ sudo apt-get install python python3-pip \
 On macOS, first install Xcode from the App Store or using [Brew](https://brew.sh/):
 
 ```shell
-brew install python3 tesseract
+brew install python@3.9.4 tesseract
 ```
 
 - __Windows__
-
-Install tesseract on Windows [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html#windows)
 
 Required python [Download python](https://www.python.org/downloads/) or using [Chocolatey](https://chocolatey.org/install) verion recommended 3.9.4 
 
 ```powershell
 choco install python --version=3.9.4
+```
+
+if the previous python installation is unsatisfactory
+
+```powershell
+choco install python --version=3.9.4 --force
 ```
 
 ### __Linux GNU & Drawin__
@@ -41,8 +47,6 @@ source env/bin/activate
 pip3 install --upgrade pip
 
 pip3 install -r ./requirements.txt
-
-pip3 install --upgrade https://storage.googleapis.com/tensorflow/mac/cpu/tensorflow-1.0.0-py3-none-any.whl
 ```
 
 ### __Windows__
@@ -57,8 +61,6 @@ env/Scripts/activate
 python -m pip install --upgrade pip
 
 pip install -r ./requirements.txt
-
-pip install --upgrade tensorflow
 ```
 
 ### __Script__
