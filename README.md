@@ -42,7 +42,7 @@ choco install python --version=3.9.4 --force
 ```bash
 python3 -m venv env
 
-source env/bin/activate
+source ./env/bin/activate
 
 pip3 install --upgrade pip
 
@@ -56,7 +56,7 @@ python -m venv ./env
 
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
 
-env/Scripts/activate
+./env/Scripts/activate
 
 python -m pip install --upgrade pip
 
