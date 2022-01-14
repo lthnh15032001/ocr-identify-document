@@ -3,3 +3,5 @@ waitress
 pytesseract
 opencv-python
 python-dotenv
+matplotlib
+unidecode
