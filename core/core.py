@@ -8,7 +8,7 @@ import numpy as np
 import sys
 
 
-def tat_ca_tinh_tuy_tap_hop_o_trong_function_nay(path_to_image="img.jpg"):
+def tat_ca_tinh_tuy_tap_hop_o_trong_function_nay(path_to_image):
 
     img = cv2.imread(path_to_image)
     img = cv2.cvtColor(img, cv2.COLOR_BGR2RGB)
@@ -51,4 +51,4 @@ def tat_ca_tinh_tuy_tap_hop_o_trong_function_nay(path_to_image="img.jpg"):
 
 
 print(tat_ca_tinh_tuy_tap_hop_o_trong_function_nay(
-    "C:\\Users\\duchu\\Downloads\\img.jpg"))
+    "img.jpg"))

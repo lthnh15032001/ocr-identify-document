@@ -1,7 +1,5 @@
 flask
 waitress
-pytesseract
-opencv-python
 python-dotenv
 autopep8
 matplotlib
