@@ -23,6 +23,7 @@ __pycache__/
 *.png
 *.jpg
 *.txt
+*.jpeg
 
 # Test folder
 test
