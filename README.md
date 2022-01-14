@@ -20,7 +20,7 @@ sudo apt-get install python=3.9.4 python3-pip \
 On macOS, first install Xcode from the App Store or using [Brew](https://brew.sh/):
 
 ```shell
-brew install python@3.9.4 tesseract
+brew install python@3.9.4
 ```
 
 - __Windows__
