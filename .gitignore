@@ -29,6 +29,7 @@ test
 
 # Requirements lib
 !requirements.txt
+!label.txt
 
 # IDE 
 .vscode/

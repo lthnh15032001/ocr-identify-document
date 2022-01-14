@@ -1,8 +1,7 @@
 flask
 waitress
-pytesseract
 opencv-python
 python-dotenv
-matplotlib
-unidecode
-tensorflow
+vietocr
+torch
+autopep8
