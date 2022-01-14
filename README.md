@@ -5,7 +5,6 @@
 ### __Prerequisites__
 
 Required python version <= __`3.9.4`__, recommended 3.9.4
-Not supported __Apple Chip__
 
 - __Linux GNU & WSL__
 
@@ -13,7 +12,7 @@ Requirements all package python:
 
 ```shell
 sudo apt-get install python=3.9.4 python3-pip \
-    python3-venv tesseract
+    python3-venv
 ```
 
 - __Drawin__
@@ -25,8 +24,6 @@ brew install python@3.9.4 tesseract
 ```
 
 - __Windows__
-
-Install tesseract on Windows [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html#windows)
 
 Required python [Download python](https://www.python.org/downloads/) or using [Chocolatey](https://chocolatey.org/install) verion recommended 3.9.4 
 
