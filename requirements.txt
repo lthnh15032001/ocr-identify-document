@@ -5,3 +5,7 @@ python-dotenv
 vietocr
 torch
 autopep8
+importlib_resources
+pydantic
+gdown 
+PyYAML
