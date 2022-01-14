@@ -30,6 +30,7 @@ test
 # Requirements lib
 !requirements.txt
 !label.txt
+!favicon.png
 
 # IDE 
 .vscode/

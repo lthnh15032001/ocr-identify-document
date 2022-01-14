@@ -2,7 +2,6 @@ import os
 
 import gdown
 import yaml
-from pydantic import BaseModel
 try:
     from importlib import resources
 except ImportError:
@@ -25,12 +24,7 @@ class Config(dict):
         Load config from config.yml file in face_recognition package
         Returns: Dict
         """
-        with resources.open_text('app', 'config.yml') as ymlfile:
+        with resources.open_text('core', 'config.yml') as ymlfile:
             cfg = yaml.safe_load(ymlfile)
 
         return Config(cfg)
-
-
-class Item(BaseModel):
-    base64_img: str
-    key: str
