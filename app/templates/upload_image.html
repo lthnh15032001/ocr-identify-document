@@ -14,12 +14,18 @@
 	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.css"
 		integrity="sha512-VFXHmyaAM2CkNU+TogLhWl7rjTFcXo1YRsruJHHmsZasKSn6LlFivRJ6gVG4mlJtybmAkZL3z9sxqGo5aX0fIw=="
 		crossorigin="anonymous">
+	<!-- background -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/main.css') }}">
+	<!-- end background -->
 	<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/util.css') }}">
+
+	{% include 'components/head.html'%}
+	{% include 'components/styles.html'%}
+
 </head>
 
 <body>
-
+	{% include 'components/header.html' %}
 	<div class="limiter">
 		<div class="container-login100">
 			<div class="wrap-login100">
@@ -28,8 +34,13 @@
 						Upload Image
 					</span>
 
+					<!-- <img src="{{url_for('static',path='undraw_upload.svg')}}" alt="upload image" class="m-8 w-96"> -->
+					<img src="{{url_for('static',path='undraw_upload.svg')}}" alt="preview file" id="preview__file"
+						class="w-96 mx-8 mb-8">
+
 					<div class="wrap-input100 validate-input">
-						<input type="file" name="file">
+						<input type="file" id="upload__file" name="file" accept="image/png, image/jpeg, image/jpg"
+							onchange="readURL(this);" />
 					</div>
 
 					<div class="container-login100-form-btn">
@@ -48,6 +59,8 @@
 			</div>
 		</div>
 	</div>
+	{% include 'components/footer.html' %}
+	{% include 'components/scripts.html' %}
 	<!--===============================================================================================-->
 	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
 		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
