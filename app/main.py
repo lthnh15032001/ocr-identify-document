@@ -121,8 +121,3 @@ def upload_image(request: Request, file: UploadFile = File(...)):
     else:
         print("Fail")
         return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
-
-
-# @app.get('/upload_image/')
-# async def reup(request: Request):
-#     return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
