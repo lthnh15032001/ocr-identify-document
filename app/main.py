@@ -87,7 +87,7 @@ def extract(item: Item):
 
 @app.get('/', response_class=HTMLResponse)
 async def index(request: Request):
-    return templates.TemplateResponse(os.path.join('upload_image.html'), {'request': request})
+    return templates.TemplateResponse(os.path.join('index.html'), {'request': request})
 
 
 @app.post('/upload_image/')

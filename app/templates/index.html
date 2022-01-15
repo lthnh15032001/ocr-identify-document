@@ -2,45 +2,75 @@
 <html lang="en">
 
 <head>
+	<title>Home - OCR Identify Document</title>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<link rel="shortcut icon" href="{{url_for('static',path='favicon.png')}}" type="image/x-icon">
 
-    <meta charset="UTF-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Home - OCR Identify Document</title>
-    <link rel="shortcut icon" href="{{url_for('static',filename='favicon.png')}}" type="image/x-icon">
-    {% include 'components/head.html'%}
-    {% include 'components/styles.html'%}
+	<!--<link rel="stylesheet" type="text/css" href="static/vendor/bootstrap/css/bootstrap.min.css">-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"
+		integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+	<!--<link rel="stylesheet" type="text/css" href="static/fonts/font-awesome-4.7.0/css/font-awesome.min.css">-->
+	<link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css"
+		integrity="sha384-wvfXpqpZZVQGK6TAh5PVlGOfQNHSoD2xbE+QkPxCAFlNEevoEH3Sl0sibVcOQVnN" crossorigin="anonymous">
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.0/animate.css"
+		integrity="sha512-VFXHmyaAM2CkNU+TogLhWl7rjTFcXo1YRsruJHHmsZasKSn6LlFivRJ6gVG4mlJtybmAkZL3z9sxqGo5aX0fIw=="
+		crossorigin="anonymous">
+	<!-- background -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/main.css') }}">
+	<!-- end background -->
+	<link rel="stylesheet" type="text/css" href="{{ url_for('static', path='/css/util.css') }}">
+
+	{% include 'components/head.html'%}
+	{% include 'components/styles.html'%}
 
 </head>
 
 <body>
+	{% include 'components/header.html' %}
+	<div class="limiter">
+		<div class="container-login100">
+			<div class="wrap-login100">
+				<form action="/upload_image" method="POST" enctype="multipart/form-data" style="margin:auto">
+					<span class="login100-form-title">
+						Upload Image
+					</span>
 
-    {% include 'components/header.html' %}
+					<!-- <img src="{{url_for('static',path='undraw_upload.svg')}}" alt="upload image" class="m-8 w-96"> -->
+					<img src="{{url_for('static',path='undraw_upload.svg')}}" alt="preview file" id="preview__file"
+						class="w-96 mx-8 mb-8">
 
-    <main id="main__file" class="flex items-center justify-center flex-col">
-        <form action="/upload_image" method="POST" enctype="multipart/form-data" style="margin:auto">
-            <img src="{{url_for('static',filename='undraw_upload.svg')}}" alt="upload image" class="m-8 w-96">
+					<div class="wrap-input100 validate-input">
+						<input type="file" id="upload__file" name="file" accept="image/png, image/jpeg, image/jpg"
+							onchange="readURL(this);" />
+					</div>
 
-            <input class="form-control block px-2 py-1.5 text-base font-normal bg-white bg-clip-padding border
-            border-solid rounded transition ease-in-out m-0 mx-8 mb-8 w-96" type="file" id="upload__file" name="file"
-                accept="image/png, image/jpeg" onchange="readURL(this);" />
+					<div class="container-login100-form-btn">
+						<button class="login100-form-btn" type="submit">
+							Upload
+						</button>
+					</div>
 
-            <img src="" alt="preview file" id="preview__file" class="w-96 mx-8 mb-8">
-            <div class="container-login100-form-btn">
-                <button class="login100-form-btn" type="submit">
-                    Upload
-                </button>
-            </div>
-            <div class="text-center p-t-136">
-                <a class="txt2" href="https://www.facebook.com/huysmith.it" target="_blank">
-                    Contact
-                    <i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
-                </a>
-            </div>
-        </form>
-    </main>
-    {% include 'components/footer.html' %}
-    {% include 'components/scripts.html' %}
+					<div class="text-center p-t-136">
+						<a class="txt2" href="https://www.facebook.com/huysmith.it" target="_blank">
+							Contact and support
+							<i class="fa fa-long-arrow-right m-l-5" aria-hidden="true"></i>
+						</a>
+					</div>
+				</form>
+			</div>
+		</div>
+	</div>
+	{% include 'components/footer.html' %}
+	{% include 'components/scripts.html' %}
+	<!--===============================================================================================-->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+		integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q"
+		crossorigin="anonymous"></script>
+	<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"
+		integrity="sha384-B4gt1jrGC7Jh4AgTPSdUtOBvfO8shuf57BaghqFfPlYxofvL8/KUEfYiJOMMV+rV"
+		crossorigin="anonymous"></script>
+	<!--===============================================================================================-->
 </body>
 
 </html>
