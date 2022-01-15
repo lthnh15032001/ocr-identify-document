@@ -10,6 +10,7 @@ from fastapi import Request
 from fastapi.responses import HTMLResponse
 from starlette.templating import Jinja2Templates
 from fastapi.staticfiles import StaticFiles
+from starlette.exceptions import HTTPException as StarletteHTTPException
 
 from vietocr.tool.config import Cfg
 from cropper import Cropper
@@ -85,12 +86,23 @@ def extract(item: Item):
         return {'message': 'approved', 'description': 'image is id card', 'info': info}
 
 
+# @app.exception_handler(StarletteHTTPException)
+# async def exception_handler(request: Request, exc: StarletteHTTPException):
+#     return templates.TemplateResponse(os.path.join('404.html'), {'request': request})
+
+
+# @app.get('/*')
+# async def exception_handler_2(request: Request):
+#     # raise StarletteHTTPException(status_code=404)
+#     return templates.TemplateResponse(os.path.join('404.html'), {'request': request})
+
+
 @app.get('/', response_class=HTMLResponse)
 async def index(request: Request):
     return templates.TemplateResponse(os.path.join('index.html'), {'request': request})
 
 
-@app.post('/upload_image/')
+@app.post('/upload_image')
 def upload_image(request: Request, file: UploadFile = File(...)):
     if file.content_type in ['image/jpeg', 'image/jpg', 'image/png']:
 
