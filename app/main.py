@@ -3,9 +3,6 @@ import time
 import base64
 import requests
 
-from flask import Flask, render_template
-
-
 import cv2
 import numpy as np
 from fastapi import FastAPI, UploadFile, File
@@ -21,14 +18,13 @@ from detector import Detector
 from reader import OCR
 from .utils import download_weights, Config, Item
 
-# app = FastAPI()
-app = Flask("__main__")
+app = FastAPI()
 
 dir_path = os.path.dirname(os.path.realpath(__file__))
 static_path = os.path.join(dir_path, 'static')
 
-# app.mount('/static', StaticFiles(directory=static_path), name='static')
-# templates = Jinja2Templates(directory=os.path.join(dir_path, 'templates'))
+app.mount('/static', StaticFiles(directory=static_path), name='static')
+templates = Jinja2Templates(directory=os.path.join(dir_path, 'templates'))
 
 # Model AI
 cfg = Config.load_config()
@@ -47,8 +43,7 @@ config['predictor']['beamsearch'] = False
 reader = OCR(config)
 
 
-# @app.post('/extract')
-@app.route('/extract', methods=['POST'])
+@app.post('/extract')
 def extract(item: Item):
     if item.key != cfg['key_api']:
         return {'message': 'rejected'}
@@ -91,21 +86,23 @@ def extract(item: Item):
         return {'message': 'approved', 'description': 'image is id card', 'info': info}
 
 
-@app.errorhandler(404)
-def handle_404(e):
-    return render_template(os.path.join('404.html'))
-
-# @app.get('/', response_class=HTMLResponse)
+# @app.exception_handler(StarletteHTTPException)
+# async def exception_handler(request: Request, exc: StarletteHTTPException):
+#     return templates.TemplateResponse(os.path.join('404.html'), {'request': request})
 
 
-@app.route('/', methods=['GET'])
-def index():
-    # return templates.TemplateResponse(os.path.join('index.html'), {'request': request})
-    return render_template(os.path.join('index.html'))
+# @app.get('/*')
+# async def exception_handler_2(request: Request):
+#     # raise StarletteHTTPException(status_code=404)
+#     return templates.TemplateResponse(os.path.join('404.html'), {'request': request})
 
 
-# @app.post('/upload_image')
-@app.route('/upload_image', methods=['POST'])
+@app.get('/', response_class=HTMLResponse)
+async def index(request: Request):
+    return templates.TemplateResponse(os.path.join('index.html'), {'request': request})
+
+
+@app.post('/upload_image')
 def upload_image(request: Request, file: UploadFile = File(...)):
     if file.content_type in ['image/jpeg', 'image/jpg', 'image/png']:
 
@@ -127,16 +124,12 @@ def upload_image(request: Request, file: UploadFile = File(...)):
         response = response.json()
 
         if response['description'] != 'image is id card':
-            # return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
-            return render_template(os.path.join('reup_image.html'), {'request': request})
+            return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
 
         base64_img = "data:image/png;base64," + my_string
-        # return templates.TemplateResponse(os.path.join('success.html'),
-        #   {'request': request, 'base64_img': base64_img, 'info': response['info']})
-        return render_template(os.path.join('success.html'),
-                               {'request': request, 'base64_img': base64_img, 'info': response['info']})
+        return templates.TemplateResponse(os.path.join('success.html'),
+                                          {'request': request, 'base64_img': base64_img, 'info': response['info']})
 
     else:
         print("Fail")
-        # return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
-        return render_template(os.path.join('reup_image.html'), {'request': request})
+        return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
