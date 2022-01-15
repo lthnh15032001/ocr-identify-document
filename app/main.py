@@ -92,7 +92,7 @@ async def index(request: Request):
 
 @app.post('/upload_image/')
 def upload_image(request: Request, file: UploadFile = File(...)):
-    if file.content_type in ['image/jpeg', 'image/png']:
+    if file.content_type in ['image/jpeg', 'image/jpg', 'image/png']:
 
         img_object = file.file.read()
         image = cv2.imdecode(np.fromstring(
@@ -112,12 +112,17 @@ def upload_image(request: Request, file: UploadFile = File(...)):
         response = response.json()
 
         if response['description'] != 'image is id card':
-            return templates.TemplateResponse(os.path.join('upload_image_again.html'), {'request': request})
+            return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
 
         base64_img = "data:image/png;base64," + my_string
-        return templates.TemplateResponse(os.path.join('predict.html'),
+        return templates.TemplateResponse(os.path.join('success.html'),
                                           {'request': request, 'base64_img': base64_img, 'info': response['info']})
 
     else:
         print("Fail")
-        return templates.TemplateResponse(os.path.join('upload_image_again.html'), {'request': request})
+        return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
+
+
+# @app.get('/upload_image/')
+# async def reup(request: Request):
+#     return templates.TemplateResponse(os.path.join('reup_image.html'), {'request': request})
