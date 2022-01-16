@@ -1,95 +1,41 @@
-# __OCR__
+# **OCR**
 
-## __Setup environments__
+<!-- ## **Setup environments**
 
-### __Prerequisites__
+### **Prerequisites** -->
 
-- __Local Linux GNU & WSL__
+**Require**
 
-Requirements all package python:
+Docker
 
-```shell
-sudo apt-get install python python3-pip \
-    python3-venv tesseract
-```
+-   [Windows](https://docs.docker.com/desktop/windows/install/)
+-   [Mac](https://docs.docker.com/desktop/mac/install/)
+-   [Linux](https://docs.docker.com/engine/install/)
 
-- __Drawin__
+and [Docker Compose](https://docs.docker.com/compose/install/)
 
-On macOS, first install Xcode from the App Store or using [Brew](https://brew.sh/):
+### **How to use**
 
-```shell
-brew install python3 tesseract
-```
-
-- __Windows__
-
-Install tesseract on Windows [Tesseract](https://tesseract-ocr.github.io/tessdoc/Installation.html#windows)
-
-Required python [Download python](https://www.python.org/downloads/) or using [Chocolatey](https://chocolatey.org/install)
-
-```powershell
-choco install python
-```
-
-### __Local Linux GNU & Drawin__
+1. Clone this project
+2. Run command
 
 ```bash
-python3 -m venv env
-
-source env/bin/activate
-
-pip3 install --upgrade pip
-
-pip3 install -r ./requirements.txt
+docker-compose up
 ```
 
-### __Local Windows__
+<!--### **Run project**
 
-```powershell
-python -m venv ./env
-
-Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-
-env/Scripts/activate
-
-python -m pip install --upgrade pip
-
-pip install -r requirements.txt
-```
-
-### __Script__
-
-- __Linux GNU & Drawin__ 
-
-```bash
-./scripts/activate.sh
-```
-
-- __Windows__
-
-```powershell
-powershell ./scripts/activate.ps1
-```
-
-### __Docker__
-
-```bash
-docker-compose up -d --build
-```
-
-### __Run project__
-
-- __Linux GNU & Drawin__ 
+-   **Linux GNU & Drawin**
 
 ```bash
 source ./env/bin/activate
 python3 server.py
 ```
 
-- __Windows__
+-   **Windows**
 
 ```powershell
 Set-ExecutionPolicy -Scope CurrentUser -ExecutionPolicy Unrestricted
-./env/Scripts/activate 
+./env/Scripts/activate
 python server.py
-```
+``` -->

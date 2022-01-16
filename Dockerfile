@@ -1,22 +1,28 @@
-FROM python:latest
+FROM python:3.8.10
 
-RUN apt-get update 
+LABEL MAINTAINER="ndh, lvt, bkd"
 
-RUN apt-get -y install \
-    tesseract-ocr \
-    tesseract-ocr-jpn \
-    libgl1-mesa-dev; 
+RUN apt-get update -y
+
+RUN apt-get -y install python3-pip
+
+RUN apt-get update
+RUN apt-get install ffmpeg libsm6 libxext6  -y
 
 RUN apt-get clean
 
-WORKDIR /ocr
+RUN mkdir /app
 
-COPY . .
+COPY . /app
 
-RUN python3 -m venv ./env
+WORKDIR /app
 
-RUN ./env/bin/pip3 install --upgrade pip
+# RUN python3 -m venv ./env
 
-RUN ./env/bin/pip3 install -r ./requirements.txt
+RUN pip3 install --upgrade pip
 
-CMD [ "./env/bin/python3","server.py" ]
+# RUN ./env/bin/pip3 install -r ./requirements.txt
+
+# CMD [ "./env/bin/python3","server.py" ]
+
+RUN pip3 install -r requirements.txt
