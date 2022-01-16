@@ -1,11 +1,6 @@
-flask
-waitress
-python-dotenv
 autopep8
-numpy
 opencv-python
 requests==2.25.1
-opencv-python==4.5.2.52
 numpy==1.19.5
 fastapi==0.65.1
 starlette==0.14.2
@@ -14,3 +9,6 @@ gdown==3.11.0
 PyYAML==5.4.1
 pydantic==1.8.2
 torch
+aiofiles
+torchvision
+uvicorn
